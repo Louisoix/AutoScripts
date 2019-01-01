@@ -11,6 +11,6 @@ Final version v1.0, upload for checking
 
 ## 3. 文件相关：
 
-#### 1. 默认存储脚本路径为D盘，"D:\scriptStorage", 若确实需要修改，请进入 "src\main\java\com\autoscript\springproject\service\ScriptService.java"，修改pathGenerator方法。
+#### 1. 默认存储脚本根目录路径为D盘，"D:\scriptStorage", 若确实需要修改，请进入 "src\main\java\com\autoscript\springproject\service\ScriptService.java"，修改pathGenerator方法。
 
-#### 2. 默认存储结果路径也为D盘， "D:\result", 若确实需要修改，请进入 "src\main\java\com\autoscript\springproject\web\ScriptController.java"， 修改use方法。
+#### 2. 默认存储脚本运行结果根目录路径也为D盘， "D:\result", 若确实需要修改，请进入 "src\main\java\com\autoscript\springproject\web\ScriptController.java"， 修改use方法。
