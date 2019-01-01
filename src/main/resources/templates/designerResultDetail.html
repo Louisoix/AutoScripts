@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="CoreyQiu">
+    <title>My Result</title>
+    <!-- core bootstrap css -->
+    <link rel="stylesheet" href="/bootstrap-4.0.0/dist/css/bootstrap.min.css">
+    <!-- component css -->
+    <link rel="stylesheet" href="/bootstrap-4.0.0/docs/4.0/examples/navbar-fixed/navbar-top-fixed.css">
+    <link href="/bootstrap-4.0.0/docs/4.0/examples/sticky-footer/sticky-footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="/bootstrap-4.0.0/docs/4.0/examples/navbars/navbar.css">
+    <link rel="stylesheet" href="https://v4.bootcss.com/docs/4.0/examples/checkout/form-validation.css">
+    <!-- core bootstrap js -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <!-- code mirror css&js -->
+    <link rel="stylesheet" href="/CodeMirror/lib/codemirror.css">
+    <script src="/CodeMirror/lib/codemirror.js"></script>
+    <script src="/CodeMirror/mode/javascript/javascript.js"></script>
+    <script src="/CodeMirror/mode/python/python.js"></script>
+    <script src="/CodeMirror/addon/edit/matchbrackets.js"></script>
+
+</head>
+
+<body class="bg-light">
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow fixed-top">
+    <a class="my-0 mr-md-auto font-weight-normal" href="index.html" style="color:black;font-size: 20pt;text-decoration:none">Auto-Script
+        Platform</a>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/scriptsMarket" style="text-decoration:none">Scripts Market</a>
+        <a class="p-2 text-dark" href="Upload" style="text-decoration:none">Upload Scripts</a>
+        <a class="dropdown-toggle p-2 text-dark" href="#" style="color: black;text-decoration: none" role="button"
+           id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Me
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="MyInfo">My Profile</a>
+            <a class="dropdown-item" href="MyScripts">My Scripts</a>
+            <a class="dropdown-item" href="MyResults">My Results</a>
+        </div>
+    </nav>
+    <a class="btn btn-outline-primary" href="/MyResults">Back</a>
+</div>
+<div class="pt-md-5 pb-md-4 mx-auto text-center">
+    <h1>Script Result</h1>
+</div>
+<div class="container">
+    <div class="row pb-2">
+        <div class="col">
+            <label style="font-weight: bold">Name:&nbsp;</label>
+            <label id="scriptName1" th:text="${script.name}">GPA Calculator</label>
+        </div>
+        <div class="col">
+            <label style="font-weight: bold">&nbsp;&nbsp;Language: &nbsp;</label>
+            <label id="scriptName2" th:text="${script.language}">Python</label>
+        </div>
+    </div>
+    <div>
+        <label style="font-weight: bold">Result:</label>
+        <p class="pt-1" th:text="${resultText}">Balabala...</p>
+    </div>
+    <a class="btn btn-outline-primary" th:href="@{/downloadResult{id}(id=${result.id})}">Download</a>
+</div>
+
+</body>
+</html>

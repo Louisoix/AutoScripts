@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="CoreyQiu">
+    <title>Auto Scripts</title>
+    <!-- core bootstrap css -->
+    <link rel="stylesheet" href="/bootstrap-4.0.0/dist/css/bootstrap.min.css">
+    <!-- component css -->
+    <link rel="stylesheet" href="/bootstrap-4.0.0/docs/4.0/examples/navbar-fixed/navbar-top-fixed.css">
+    <link href="/bootstrap-4.0.0/docs/4.0/examples/sticky-footer/sticky-footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="/bootstrap-4.0.0/docs/4.0/examples/navbars/navbar.css">
+    <link rel="stylesheet" href="https://v4.bootcss.com/docs/4.0/examples/checkout/form-validation.css">
+    <!-- core bootstrap js -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <!-- code mirror css&js -->
+    <link rel="stylesheet" href="/CodeMirror/lib/codemirror.css">
+    <script src="/CodeMirror/lib/codemirror.js"></script>
+    <script src="/CodeMirror/mode/javascript/javascript.js"></script>
+    <script src="/CodeMirror/mode/python/python.js"></script>
+    <script src="/CodeMirror/addon/edit/matchbrackets.js"></script>
+
+</head>
+<body>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow fixed-top">
+    <a class="my-0 mr-md-auto font-weight-normal" href="index.html" style="color:black;font-size: 20pt;text-decoration:none">Scripts Management</a>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="dropdown-toggle p-2 text-dark" href="#" style="color: black;text-decoration: none" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Management
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/manageType">Manage Customer</a>
+            <a class="dropdown-item" href="/ScriptManage">Manage Scripts</a>
+        </div>
+    </nav>
+    <a class="btn btn-outline-primary" href="/logOut">Log Out</a>
+</div>
+
+<div class="container-fluid pt-5 pr-5 pl-5">
+    <table class="table table-striped table-hover text-center">
+        <thead>
+        <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Id</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Nickname</th>
+        </tr>
+        </thead>
+        <tbody >
+        <tr th:each="designer,iterStat:${designerList}">
+            <td th:text="${iterStat.count}" scope="row">1</td>
+            <td th:text="${designer.id}">1</td>
+            <td th:text="${designer.name}">corey</td>
+            <td th:text="${designer.password}">Corey</td>
+            <td th:text="${designer.nickname}">2018-12-20</td>
+            <td>
+                <a class="btn btn-outline-danger btn-sm" th:href="@{/deleteDesigner{id}(id=${designer.id})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>
