@@ -1,4 +1,4 @@
-# springproject-AutoScripts
+# AutoScripts
 Final version v1.0, upload for checking
 
 ## 1. 因为前端使用了在线.css，.js，使用该项目需要联网。
